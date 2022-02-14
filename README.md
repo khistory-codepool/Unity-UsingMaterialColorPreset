@@ -4,6 +4,26 @@ Use Google Material Color System in Unity
 ![enter image description here](https://user-images.githubusercontent.com/49914295/153880498-98ad0165-2668-4565-9af4-f3be8ab9c5c7.gif)
 ![enter image description here](https://user-images.githubusercontent.com/49914295/153880515-04f6e904-bd79-411d-a2ed-54854a298b55.gif)
 
+# sample code
+    using UnityEngine;  
+    using UnityEngine.UI;  
+    using Morm.MaterialDesign;
+	
+	private Image img;
+
+    private void Start()  
+    {  
+	    //Action that is called when Theme changes
+		ColorSystem.Instance.OnThemeChanged += OnThemeChagned;  
+
+		//get color
+		img.color = ColorSystem.Instance.GetColor(ColorType.Primary);
+
+		//change theme
+		ColorSystem.Instance.ChangeTheme(ColorSystem.Theme.Dark)
+    }
+    
+
 
 
 # Getting Started
@@ -20,3 +40,5 @@ Use Google Material Color System in Unity
 10. If the path is correct...
 11. Use the **Morm.MaterialDesign.ColorSystem.Instance.GetColor(ColorType type)** function.
 12. There's not much code. Look at it, modify it, and use it as you want. Please refer to the demo.
+
+
