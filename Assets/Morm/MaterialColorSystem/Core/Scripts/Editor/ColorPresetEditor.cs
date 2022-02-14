@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Morm.ColorSystem
+namespace Morm.MaterialDesign
 {
     [CustomEditor(typeof(ColorPreset))]
     public class ColorPresetEditor : Editor

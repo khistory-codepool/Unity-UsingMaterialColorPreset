@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-using Morm.ColorSystem;
+using Morm.MaterialDesign;
 
 [RequireComponent(typeof(Button))]
 public class ThemeChangeButton : MonoBehaviour

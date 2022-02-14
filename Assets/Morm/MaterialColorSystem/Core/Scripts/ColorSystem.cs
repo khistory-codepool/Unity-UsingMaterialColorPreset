@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Morm.ColorSystem
+namespace Morm.MaterialDesign
 {
     [ExecuteAlways]
     public class ColorSystem : MonoBehaviour

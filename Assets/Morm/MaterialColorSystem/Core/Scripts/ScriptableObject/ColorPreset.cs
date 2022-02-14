@@ -1,7 +1,7 @@
 using System.Xml;
 using UnityEngine;
 
-namespace Morm.ColorSystem
+namespace Morm.MaterialDesign
 {
     public enum ColorType
     {

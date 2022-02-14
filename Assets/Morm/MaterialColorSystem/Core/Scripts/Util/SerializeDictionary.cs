@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Morm.ColorSystem
+namespace Morm.MaterialDesign
 {
     [Serializable]
     public class SerializeDictionary<K, V> : Dictionary<K, V>, ISerializationCallbackReceiver
