@@ -18,20 +18,14 @@ namespace Morm.ColorSystem
         
         private ColorPreset CurrentPreset { get
         {
-            if (currentTheme.Equals(Theme.Light))
-                return lightPreset;
-            else
-                return darkPreset;
+            if (currentTheme.Equals(Theme.Light)) return _lightPreset;
+            return _darkPreset;
         }}
-        private ColorPreset lightPreset;
-        private ColorPreset darkPreset;
-        private Color errColor = Color.red;
+        private ColorPreset _lightPreset;
+        private ColorPreset _darkPreset;
+        private readonly Color _errColor = Color.red;
 
-        public enum Theme
-        {
-            Light,
-            Dark,
-        }
+        public enum Theme { Light, Dark, }
         public Theme currentTheme;
         public Action OnThemeChanged;
         
@@ -73,11 +67,11 @@ namespace Morm.ColorSystem
             {
                 Debug.LogWarning(e);
                 if (TryResourcesLoadColorPreset(Theme.Light))
-                    return lightPreset.dic[targetColorType];
+                    return _lightPreset.dic[targetColorType];
                 else if (TryResourcesLoadColorPreset(Theme.Dark))
-                    return darkPreset.dic[targetColorType];
+                    return _darkPreset.dic[targetColorType];
                 else
-                    return errColor;
+                    return _errColor;
             }
         }
 
@@ -86,11 +80,11 @@ namespace Morm.ColorSystem
             switch (theme)
             {
                 case Theme.Light:
-                    lightPreset = Resources.Load<ColorPreset>(LightPath);
-                    return lightPreset != null;
+                    _lightPreset = Resources.Load<ColorPreset>(LightPath);
+                    return _lightPreset != null;
                 case Theme.Dark:
-                    darkPreset = Resources.Load<ColorPreset>(DarkPath);
-                    return darkPreset != null;
+                    _darkPreset = Resources.Load<ColorPreset>(DarkPath);
+                    return _darkPreset != null;
             }
 
             return false;
