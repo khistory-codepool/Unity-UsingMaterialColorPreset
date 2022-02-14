@@ -36,7 +36,7 @@ namespace Morm.ColorSystem
             TryResourcesLoadColorPreset(Theme.Light);
             TryResourcesLoadColorPreset(Theme.Dark);
 
-            LoadCurrentTheme();
+            LoadSavedCurrentTheme();
         }
 
         /// <param name="alpha">0~1</param>
@@ -90,7 +90,7 @@ namespace Morm.ColorSystem
             return false;
         }
         
-        private void LoadCurrentTheme()
+        private void LoadSavedCurrentTheme()
         {
             if (PlayerPrefs.HasKey(PlayerPrefSaveKey))
                 currentTheme = (Theme)PlayerPrefs.GetInt(PlayerPrefSaveKey);
